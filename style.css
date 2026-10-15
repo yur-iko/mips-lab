@@ -10,3 +10,6 @@ article{min-width:0}button,select,input{scroll-margin:24px}select{font:inherit;f
 @media(max-width:900px){.practice-picker{grid-template-columns:1fr 1.5fr}.practice-picker p{grid-column:1/-1;margin:0}.lesson-heading{align-items:start;gap:16px}}
 @media(max-width:700px){.practice-picker{grid-template-columns:1fr;gap:13px;margin-bottom:26px}.practice-picker p{grid-column:auto}.practice-picker select{font-size:14px;min-height:44px}.lesson-heading{flex-wrap:wrap}.lesson-heading>button{margin-top:0}.lesson-heading h2{font-size:23px;line-height:1.25}.lesson-heading p{font-size:13px}.prediction h3{font-size:18px}.answer-row button{padding:10px}.answer-row select,.answer-row input{font-size:14px}.givens>div{grid-template-columns:minmax(95px,.85fr) minmax(0,1.2fr);gap:10px}.controls button{min-height:44px}.checkpoint-list li{padding:11px 10px}.intro h1{letter-spacing:-.035em}h2{letter-spacing:-.025em}}
 @media(prefers-reduced-motion:reduce){.reg{transition:none}}
+
+.practice-summary{display:flex;flex-direction:column;align-items:flex-end;gap:8px}.practice-picker .practice-summary p{margin:0}.practice-summary button{min-height:44px;padding:10px 14px}
+@media(max-width:900px){.practice-summary{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:space-between;gap:16px}}

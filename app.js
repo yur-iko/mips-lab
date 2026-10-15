@@ -4,7 +4,12 @@ import {chapters} from './lessons.js?v=3';
 const $ = id => document.getElementById(id);
 const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const done = new Set();
-let index = 0, history = [], state, hex = false, chapterFilter = chapters[0][0];
+const chapterKey = 'mips-lab-chapter';
+let index = 0, history = [], state, hex = false, chapterFilter = 'all';
+try {
+  const saved = localStorage.getItem(chapterKey);
+  if (saved === 'all' || chapters.some(([id]) => id === saved)) chapterFilter = saved;
+} catch {}
 const fmt = value => hex ? '0x' + (value >>> 0).toString(16).padStart(8, '0') : String(value);
 const number = value => String(value).padStart(2, '0');
 const filtered = () => lessons.map((lesson, i) => i).filter(i => chapterFilter === 'all' || lessons[i].chapter === chapterFilter).sort((a, b) => Number(lessons[a].chapter) - Number(lessons[b].chapter) || a - b);
@@ -108,6 +113,7 @@ function render() {
 
 $('chapter-filter').onchange = event => {
   chapterFilter = event.target.value;
+  try { localStorage.setItem(chapterKey, chapterFilter); } catch {}
   select(filtered().includes(index) ? index : filtered()[0]);
 };
 $('session-picker').onchange = event => select(Number(event.target.value));
@@ -121,6 +127,13 @@ $('step').onclick = () => {
 };
 $('back').onclick = () => { if (history.length) { state = history.pop(); render(); } };
 $('reset').onclick = () => select(index);
+$('reset-all').onclick = () => {
+  chapterFilter = 'all';
+  try { localStorage.removeItem(chapterKey); } catch {}
+  done.clear();
+  hex = false;
+  select(filtered()[0]);
+};
 $('format').onclick = () => { hex = !hex; renderState(lessons[index], execute(lessons[index], state), history.at(-1)); };
 $('answer-form').onsubmit = event => {
   event.preventDefault();

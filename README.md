@@ -14,7 +14,7 @@ My personal interactive website for practicing computer architecture with exampl
 - Microarchitecture: datapath controls, pipeline timing, forwarding, and hazards
 - Memory hierarchy: address fields, cache hits/LRU, AMAT/CPI, pages, and TLBs
 
-Step through instruction traces or answer guided checkpoints. Check predictions, reveal worked explanations, go back, and restart. Light and dark themes use a saved preference.
+Step through instruction traces or answer guided checkpoints. Check predictions, reveal worked explanations, go back, and restart. Your selected chapter is remembered across refreshes and later visits in the same browser. Reset all clears practice progress and returns to All chapters; Restart session only restarts the current exercise. Light and dark themes use a saved preference.
 
 ## Run locally
 

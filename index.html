@@ -6,7 +6,7 @@
   <title>MIPS / Computer architecture practice</title>
   <link rel="icon" href="data:,">
   <script>(()=>{let theme;try{theme=localStorage.getItem('mips-lab-theme')}catch{}document.documentElement.dataset.theme=theme==='light'||theme==='dark'?theme:window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'})();</script>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
   <header>
@@ -26,7 +26,10 @@
       <nav class="practice-picker" aria-label="Choose a practice session">
         <div><label for="chapter-filter">Chapter</label><select id="chapter-filter"></select></div>
         <div><label for="session-picker">Practice session</label><select id="session-picker"></select></div>
-        <p id="progress" role="status" aria-live="polite"></p>
+        <div class="practice-summary">
+          <p id="progress" role="status" aria-live="polite"></p>
+          <button id="reset-all" title="Clear practice progress and return to All chapters">Reset all</button>
+        </div>
       </nav>
       <div class="lesson-heading">
         <div>
@@ -82,6 +85,6 @@
     </section>
   </main>
   <footer>Learn slowly. Predict often. <span>MIPS / Practice lab</span></footer>
-  <script type="module" src="app.js?v=4"></script>
+  <script type="module" src="app.js?v=5"></script>
 </body>
 </html>
