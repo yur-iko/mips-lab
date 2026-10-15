@@ -1,20 +1,25 @@
 # MIPS Lab
 
-My personal interactive website for learning how MIPS instructions change registers, memory, and program execution.
+My personal interactive website for practicing computer architecture with examples derived from my HCMUT course slides.
 
 **[Try the website here!](https://yur-iko.github.io/mips-lab/)**
 
-## Features
+## Practice
 
-- Three exercises covering arithmetic, memory, and branches
-- Step through instructions and watch the machine state change
-- Predict results, check answers, and reveal explanations
-- Go back, restart exercises, and switch between decimal and hexadecimal values
+20 sessions across five chapters:
+
+- Performance: weighted CPI, CPU time, power, and throughput
+- MIPS ISA: arithmetic, memory, branches, logic, constants, arrays, comparisons, procedures, byte order, and encoding
+- Computer arithmetic: overflow, HI/LO, and IEEE-754
+- Microarchitecture: datapath controls, pipeline timing, forwarding, and hazards
+- Memory hierarchy: address fields, cache hits/LRU, AMAT/CPI, pages, and TLBs
+
+Step through instruction traces or answer guided checkpoints. Check predictions, reveal worked explanations, go back, and restart. Light and dark themes use a saved preference.
 
 ## Run locally
 
-The website uses plain HTML, CSS, and JavaScript, with no build step.
+Serve this repository with a local HTTP server and open its URL in a modern browser. The site uses plain HTML, CSS, and JavaScript modules, with no build step or package installation.
 
-Serve the repository folder with a local HTTP server and open its URL in your browser. Use HTTP because the JavaScript modules may not load when opening `index.html` directly.
+With Node.js 22 or later, run the automated checks using `npm test` or `node --test`.
 
-The exercises use 32-bit registers and disable branch delay slots.
+See [SOURCES.md](SOURCES.md) for slide references, course conventions, and modeling limits. The original course PDFs are not included.
