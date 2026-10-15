@@ -4,7 +4,7 @@ import {chapters} from './lessons.js?v=3';
 const $ = id => document.getElementById(id);
 const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const done = new Set();
-let index = 0, history = [], state, hex = false, chapterFilter = 'all';
+let index = 0, history = [], state, hex = false, chapterFilter = chapters[0][0];
 const fmt = value => hex ? '0x' + (value >>> 0).toString(16).padStart(8, '0') : String(value);
 const number = value => String(value).padStart(2, '0');
 const filtered = () => lessons.map((lesson, i) => i).filter(i => chapterFilter === 'all' || lessons[i].chapter === chapterFilter).sort((a, b) => Number(lessons[a].chapter) - Number(lessons[b].chapter) || a - b);
@@ -136,4 +136,4 @@ $('reveal').onclick = () => {
   $('reveal').textContent = $('explanation').hidden ? 'Reveal explanation ↓' : 'Hide explanation ↑';
 };
 $('next-session').onclick = () => select(filtered()[filtered().indexOf(index) + 1]);
-select(0);
+select(filtered()[0]);
