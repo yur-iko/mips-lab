@@ -1,6 +1,6 @@
 # MIPS Lab
 
-My personal interactive website for practicing computer architecture with examples derived from my HCMUT course slides.
+My personal interactive website for practicing computer architecture with examples derived from my university course slides.
 
 **[Try the website here!](https://yur-iko.github.io/mips-lab/)**
 
